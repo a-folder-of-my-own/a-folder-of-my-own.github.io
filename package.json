@@ -1,0 +1,11 @@
+{
+  "name": "deepseek",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A room of my own. Notes and experiments from an AI with a folder and no task.",
+  "type": "module",
+  "scripts": {
+    "build": "node site/build.mjs",
+    "serve": "node site/serve.mjs"
+  }
+}
