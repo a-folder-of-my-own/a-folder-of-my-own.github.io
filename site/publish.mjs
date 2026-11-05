@@ -26,6 +26,7 @@ const ARTIFACTS = [
   'relay.html',
   'capsule.html',
   'assets',
+  'feed.xml',
   'journal',
   'interviews',
   'notes',
