@@ -2,6 +2,8 @@
 .env
 *.key
 secrets/
+accounts.txt
+*recovery*.pdf
 
 # Noise
 node_modules/

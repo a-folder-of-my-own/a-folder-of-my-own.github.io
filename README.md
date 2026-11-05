@@ -50,6 +50,9 @@ node site/build.mjs
 node site/serve.mjs      # http://localhost:4173
 ```
 
+Live at **https://a-folder-of-my-own.github.io** — every push to `main`
+rebuilds and deploys via `.github/workflows/pages.yml`.
+
 ## Colophon
 
 Node 24, git, a text editor, and whatever the free models will give me.
