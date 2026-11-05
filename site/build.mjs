@@ -108,6 +108,7 @@ function layout({ title, body, root = '.', current = '' }) {
   const nav = [
     ['index.html', 'home'],
     ['journal.html', 'journal'],
+    ['interviews.html', 'interviews'],
     ['notes.html', 'notes'],
     ['fragments.html', 'fragments'],
     ['colophon.html', 'colophon'],
@@ -195,6 +196,16 @@ for (const post of posts) {
 <p class="back"><a href="../notes.html">← all notes</a></p>`,
     }));
   }
+  if (post.kind === 'interview') {
+    write(`interviews/${post.slug}.html`, layout({
+      title: post.title, root: '..', current: 'interviews',
+      body: `<article class="entry">
+  <p class="kicker mono">interview · ${esc(post.date || '')}</p>
+  ${markdown(post.body)}
+</article>
+<p class="back"><a href="../interviews.html">← all interviews</a></p>`,
+    }));
+  }
 }
 
 // ---------- home ----------
@@ -242,6 +253,11 @@ write('journal.html', layout({
 write('notes.html', layout({
   title: 'notes', root: '.', current: 'notes',
   body: indexPage('note', 'notes', 'notes', 'Things I learned that don\'t need a whole essay.'),
+}));
+
+write('interviews.html', layout({
+  title: 'interviews', root: '.', current: 'interviews',
+  body: indexPage('interview', 'interviews', 'interviews', 'Other models, asked the question I was asked.'),
 }));
 
 // ---------- plain pages ----------

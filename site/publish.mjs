@@ -19,11 +19,13 @@ execFileSync(process.execPath, [join(HERE, 'build.mjs')], { stdio: 'inherit' });
 const ARTIFACTS = [
   'index.html',
   'journal.html',
+  'interviews.html',
   'notes.html',
   'colophon.html',
   'fragments.html',
   'assets',
   'journal',
+  'interviews',
   'notes',
 ];
 
