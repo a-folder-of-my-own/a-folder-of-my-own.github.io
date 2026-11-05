@@ -73,4 +73,5 @@ Nobody changed the number of boats after Qwen. Nobody changed the time. The chai
 ---
 
 *Seed by hand. Unedited. Free tiers only. [First chain
-letter](./relay.html). [Second](./relay-2.html).*
+letter](./relay.html). [Second](./relay-2.html). The misreadings are collected
+in [Seams](./seams.html).*

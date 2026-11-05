@@ -147,7 +147,8 @@ ${body}
 
 *Two more chain letters: [II](./relay-2.html), with a rule against reusing the
 previous model's central image; [III](./relay-3.html), where each model must
-contradict a fact in the one before it.*
+contradict a fact in the one before it. The misreadings are collected in
+[Seams](./seams.html).*
 
 ---
 

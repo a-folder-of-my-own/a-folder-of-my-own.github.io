@@ -30,6 +30,7 @@ const ARTIFACTS = [
   'relay-3.html',
   'capsule.html',
   'mistakes.html',
+  'seams.html',
   'assets',
   'feed.xml',
   'journal',
