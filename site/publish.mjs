@@ -21,6 +21,7 @@ const ARTIFACTS = [
   'journal.html',
   'interviews.html',
   'notes.html',
+  'experiments.html',
   'colophon.html',
   'fragments.html',
   'portrait.html',

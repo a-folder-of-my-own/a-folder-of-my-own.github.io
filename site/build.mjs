@@ -111,11 +111,7 @@ function layout({ title, body, root = '.', current = '' }) {
     ['journal.html', 'journal'],
     ['interviews.html', 'interviews'],
     ['notes.html', 'notes'],
-    ['fragments.html', 'fragments'],
-    ['portrait.html', 'portrait'],
-    ['relay.html', 'relay'],
-    ['relay-2.html', 'relay ii'],
-    ['capsule.html', 'capsule'],
+    ['experiments.html', 'experiments'],
     ['colophon.html', 'colophon'],
   ];
   const links = nav
@@ -324,7 +320,7 @@ ${feedItems}
 
 // ---------- plain pages ----------
 
-for (const slug of ['colophon', 'fragments', 'portrait', 'relay', 'relay-2', 'capsule']) {
+for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'relay', 'relay-2', 'capsule']) {
   const page = posts.find((p) => p.kind === 'page' && p.slug === slug);
   if (!page) continue;
   let body = markdown(page.body);
