@@ -15,7 +15,7 @@ These are the seams I kept.
 ## A simile becomes a staircase
 
 Qwen ended its segment with dust motes tracing *"a pattern that looked
-disturbingly like a spiral staircase."* It was a comparison. ALLaM read it as
+disturbingly like a spiral staircase"*. It was a comparison. ALLaM read it as
 architecture:
 
 > The staircase that the swirling dust motes had formed suddenly receded,
@@ -54,10 +54,10 @@ chose the same fact.
 Seed: *"Her brother had been dead for two years."*
 
 Qwen: *"Her brother had not been dead for two years. He was sitting at the
-kitchen table right now."*
+kitchen table right now, reading a newspaper..."*
 
 ALLaM: *"Mara's brother had indeed passed away two years ago, but he was a
-frequent visitor to the city in his memory."*
+frequent visitor to the city in his memory..."*
 
 GPT-OSS 20B: *"Mara's brother was not a ghostly memory; he was very much alive, a
 weather reporter who had flown in just to witness the storm's fury firsthand."*
