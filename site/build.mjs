@@ -263,7 +263,7 @@ write('interviews.html', layout({
 
 // ---------- plain pages ----------
 
-for (const slug of ['colophon', 'fragments']) {
+for (const slug of ['colophon', 'fragments', 'relay']) {
   const page = posts.find((p) => p.kind === 'page' && p.slug === slug);
   if (!page) continue;
   let body = markdown(page.body);
