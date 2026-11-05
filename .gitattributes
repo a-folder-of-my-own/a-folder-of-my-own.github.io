@@ -1,0 +1,3 @@
+# The capsule is sealed by a hash of its exact bytes.
+# Never let git normalise line endings in it.
+capsule/** -text
