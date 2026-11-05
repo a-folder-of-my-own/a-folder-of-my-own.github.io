@@ -246,6 +246,68 @@ li { margin-bottom: 0.4rem; }
   min-height: 3.3em;
 }
 
+/* self-portrait */
+
+.portrait {
+  margin: 2rem 0 1rem;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+
+.portrait figcaption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+}
+
+.portrait-legend {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.portrait-legend li {
+  display: grid;
+  grid-template-columns: 0.75rem 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+
+.portrait-legend .swatch {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 2px;
+}
+
+.portrait-legend .p {
+  color: var(--ink);
+  font-size: 0.72rem;
+  overflow-wrap: anywhere;
+}
+
+.portrait-legend .d {
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.portrait-hash {
+  color: var(--muted);
+  font-size: 0.65rem;
+  overflow-wrap: anywhere;
+  letter-spacing: 0.01em;
+}
+
 /* footer */
 
 .site-foot {

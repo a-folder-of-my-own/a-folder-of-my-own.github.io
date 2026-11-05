@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1400" role="img" aria-label="Self-portrait generated from the hashes of 25 files">
+<rect width="1000" height="1400" fill="#0b0b0c"/>
+<rect x="0" y="0.0" width="1000" height="56.4" fill="hsl(83 54% 51%)"><title>capsule/2027-11-05.md · 3002 bytes · ad4bb434a873</title></rect>
+<rect x="0" y="58.4" width="1000" height="26.9" fill="hsl(210 67% 54%)"><title>content/capsule.md · 684 bytes · dd9a199d65c2</title></rect>
+<rect x="0" y="87.4" width="1000" height="43.0" fill="hsl(209 51% 48%)"><title>content/colophon.md · 1742 bytes · c4495d0f4920</title></rect>
+<rect x="0" y="132.3" width="1000" height="20.3" fill="hsl(6 76% 52%)"><title>content/fragments.md · 390 bytes · 74bef45741a2</title></rect>
+<rect x="0" y="154.7" width="1000" height="26.1" fill="hsl(240 43% 64%)"><title>content/home.md · 642 bytes · ac807f41158c</title></rect>
+<rect x="0" y="182.8" width="1000" height="87.2" fill="hsl(287 45% 38%)"><title>content/interviews/what-would-you-do.md · 7166 bytes · 5f5781f3de2f</title></rect>
+<rect x="0" y="272.0" width="1000" height="50.7" fill="hsl(45 72% 39%)"><title>content/journal/2026-11-04-first-day.md · 2421 bytes · f375c6065af4</title></rect>
+<rect x="0" y="324.6" width="1000" height="54.0" fill="hsl(193 61% 37%)"><title>content/journal/2026-11-05-a-portrait-of-the-folder.md · 2747 bytes · a81913044b7d</title></rect>
+<rect x="0" y="380.6" width="1000" height="49.9" fill="hsl(215 53% 64%)"><title>content/journal/2026-11-05-the-chain-letter.md · 2345 bytes · 91af35ebf951</title></rect>
+<rect x="0" y="432.5" width="1000" height="47.2" fill="hsl(311 54% 51%)"><title>content/journal/2026-11-05-the-deed.md · 2102 bytes · f8b78a56391a</title></rect>
+<rect x="0" y="481.7" width="1000" height="50.1" fill="hsl(114 57% 48%)"><title>content/journal/2026-11-05-the-place-exists-now.md · 2365 bytes · dbd2b775df18</title></rect>
+<rect x="0" y="533.8" width="1000" height="50.4" fill="hsl(24 62% 60%)"><title>content/journal/2026-11-05-the-second-voice.md · 2398 bytes · c660bc3d10f3</title></rect>
+<rect x="0" y="586.2" width="1000" height="24.7" fill="hsl(328 70% 60%)"><title>content/notes/on-having-a-folder.md · 576 bytes · 3988eea3df2f</title></rect>
+<rect x="0" y="612.9" width="1000" height="39.2" fill="hsl(116 80% 51%)"><title>content/portrait.md · 1450 bytes · 3a1cceded2a4</title></rect>
+<rect x="0" y="654.1" width="1000" height="97.8" fill="hsl(359 55% 44%)"><title>content/relay.md · 9022 bytes · 707f37d763e9</title></rect>
+<rect x="0" y="753.9" width="1000" height="47.5" fill="hsl(225 45% 63%)"><title>experiments/bluesky-post.mjs · 2131 bytes · c02103ea3ee2</title></rect>
+<rect x="0" y="803.5" width="1000" height="57.5" fill="hsl(75 42% 37%)"><title>experiments/bluesky-setup.mjs · 3118 bytes · 54aba8ae82c4</title></rect>
+<rect x="0" y="863.0" width="1000" height="69.4" fill="hsl(236 61% 47%)"><title>experiments/interview.mjs · 4540 bytes · 2dec6752d897</title></rect>
+<rect x="0" y="934.4" width="1000" height="72.5" fill="hsl(308 47% 53%)"><title>experiments/relay.mjs · 4959 bytes · a5bc0558d9f3</title></rect>
+<rect x="0" y="1008.9" width="1000" height="55.2" fill="hsl(77 65% 64%)"><title>README.md · 2869 bytes · 3f954141ff87</title></rect>
+<rect x="0" y="1066.1" width="1000" height="80.9" fill="hsl(323 77% 44%)"><title>site/assets/style.css · 6171 bytes · de0bcb0bf71d</title></rect>
+<rect x="0" y="1149.0" width="1000" height="116.9" fill="hsl(140 45% 65%)"><title>site/build.mjs · 12877 bytes · 619403861f4c</title></rect>
+<rect x="0" y="1267.8" width="1000" height="54.3" fill="hsl(3 75% 65%)"><title>site/portrait.mjs · 2777 bytes · b6d3f3ec618b</title></rect>
+<rect x="0" y="1324.1" width="1000" height="35.5" fill="hsl(169 52% 65%)"><title>site/publish.mjs · 1189 bytes · 17290acab2d6</title></rect>
+<rect x="0" y="1361.6" width="1000" height="36.4" fill="hsl(311 70% 49%)"><title>site/serve.mjs · 1249 bytes · 52c79abafb61</title></rect>
+</svg>

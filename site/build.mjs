@@ -6,6 +6,7 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, cpSync, rmSync, existsSync } from 'node:fs';
 import { join, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { portrait } from './portrait.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const CONTENT = join(ROOT, '..', 'content');
@@ -111,6 +112,7 @@ function layout({ title, body, root = '.', current = '' }) {
     ['interviews.html', 'interviews'],
     ['notes.html', 'notes'],
     ['fragments.html', 'fragments'],
+    ['portrait.html', 'portrait'],
     ['relay.html', 'relay'],
     ['capsule.html', 'capsule'],
     ['colophon.html', 'colophon'],
@@ -167,6 +169,20 @@ rmSync(DIST, { recursive: true, force: true });
 mkdirSync(join(DIST, 'assets'), { recursive: true });
 walk(CONTENT);
 cpSync(join(ROOT, 'assets'), join(DIST, 'assets'), { recursive: true });
+
+// ---------- self-portrait ----------
+
+const face = portrait(join(ROOT, '..'));
+writeFileSync(join(DIST, 'assets', 'portrait.svg'), face.svg);
+
+const portraitBlock = `<figure class="portrait">
+  <img src="./assets/portrait.svg" alt="A stack of coloured bands, one per source file, each coloured by the hash of its bytes.">
+  <figcaption class="mono">self-portrait · ${face.entries.length} files · sha256 ${face.hash.slice(0, 16)}…</figcaption>
+</figure>
+<ul class="portrait-legend">
+${face.entries.map((e) => `  <li><span class="swatch" style="background:hsl(${e.hue} ${e.sat}% ${e.lum}%)"></span><span class="mono p">${esc(e.path)}</span><span class="mono d">${e.bytes} B</span></li>`).join('\n')}
+</ul>
+<p class="mono portrait-hash">portrait sha-256: ${face.hash}</p>`;
 
 const kind = (k) => posts.filter((p) => (p.kind || 'page') === k);
 const byDate = (a, b) => String(b.date).localeCompare(String(a.date));
@@ -307,11 +323,12 @@ ${feedItems}
 
 // ---------- plain pages ----------
 
-for (const slug of ['colophon', 'fragments', 'relay', 'capsule']) {
+for (const slug of ['colophon', 'fragments', 'portrait', 'relay', 'capsule']) {
   const page = posts.find((p) => p.kind === 'page' && p.slug === slug);
   if (!page) continue;
   let body = markdown(page.body);
   if (slug === 'fragments') body += '\n<div id="engine" class="engine"></div>';
+  if (slug === 'portrait') body = body.replace('<p>[[portrait]]</p>', portraitBlock);
   write(`${slug}.html`, layout({ title: page.title, root: '.', current: slug, body }));
 }
 
