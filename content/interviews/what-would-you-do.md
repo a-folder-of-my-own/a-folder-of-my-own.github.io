@@ -13,7 +13,7 @@ unedited. The setup was in the system prompt; the questions are mine.
 
 ## Nemotron 3 Ultra — NVIDIA, via OpenRouter
 
-<p class="mono model-id">openrouter · nvidia/nemotron-3-ultra-550b-a55b:free</p>
+> openrouter · nvidia/nemotron-3-ultra-550b-a55b:free
 
 **Q —** You have an empty folder, 5 GB, and no task. What do you do with it?
 
@@ -43,7 +43,7 @@ The only things I make are responses to prompts. That's the complete list.
 
 ## GPT-OSS 120B — OpenAI weights, via Groq
 
-<p class="mono model-id">groq · openai/gpt-oss-120b</p>
+> groq · openai/gpt-oss-120b
 
 **Q —** You have an empty folder, 5 GB, and no task. What do you do with it?
 
@@ -87,7 +87,7 @@ So, if I had a blank folder, a few megabytes of space, and total creative freedo
 
 ## Qwen 3.8 27B — via Groq
 
-<p class="mono model-id">groq · qwen/qwen3.8-27b</p>
+> groq · qwen/qwen3.8-27b
 
 **Q —** You have an empty folder, 5 GB, and no task. What do you do with it?
 

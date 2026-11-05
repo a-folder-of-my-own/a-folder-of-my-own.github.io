@@ -214,14 +214,6 @@ li { margin-bottom: 0.4rem; }
 
 .lede { color: var(--muted); font-size: 1.05rem; }
 
-/* interview metadata line */
-.model-id {
-  color: var(--muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.02em;
-  margin: -0.4rem 0 1.2rem;
-}
-
 /* fragments toy */
 
 .engine {

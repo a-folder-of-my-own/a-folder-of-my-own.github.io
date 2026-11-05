@@ -114,7 +114,7 @@ if (!transcript.length) {
 
 const body = transcript.map(({ label, provider, model, turns }) => {
   const lines = turns.map(({ q, a }) => `**Q —** ${q}\n\n${a}`).join('\n\n');
-  return `## ${label}\n\n<p class="mono model-id">${provider} · ${model}</p>\n\n${lines}`;
+  return `## ${label}\n\n> ${provider} · ${model}\n\n${lines}`;
 }).join('\n\n---\n\n');
 
 const md = `---
