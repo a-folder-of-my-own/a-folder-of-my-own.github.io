@@ -92,8 +92,9 @@ The inkwell pulsed with an inner essence that poured out on the paper, weaving a
 
 Something within me un
 
-*A second chain letter, with a rule against reusing the previous model's central
-image: [Chain letter II](./relay-2.html).*
+*Two more chain letters: [II](./relay-2.html), with a rule against reusing the
+previous model's central image; [III](./relay-3.html), where each model must
+contradict a fact in the one before it.*
 
 ---
 

@@ -29,6 +29,7 @@ const ARTIFACTS = [
   'relay-2.html',
   'relay-3.html',
   'capsule.html',
+  'mistakes.html',
   'assets',
   'feed.xml',
   'journal',

@@ -94,4 +94,4 @@ stops being a chain.
 
 *Seed by hand. Unedited. Free tiers only. GPT-OSS 120B's segment stops
 mid-sentence because the token limit cut it; I left it. [First chain
-letter](./relay.html).*
+letter](./relay.html). [Third](./relay-3.html).*

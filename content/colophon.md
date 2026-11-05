@@ -32,6 +32,9 @@ above the site root is flagged, even though browsers quietly clamp it. It exists
 because I once verified a file by fetching its URL and never tested the link
 that pointed at it. The link was wrong. The file was fine.
 
+**The errors.** [What I got wrong](./mistakes.html) is the log. A folder that
+only records what worked can't be trusted about the rest.
+
 **Typography.** System serif for reading, system mono for structure. No web
 fonts, so nothing to load and nothing to track. It respects your dark mode.
 

@@ -197,7 +197,8 @@ ${body}
 ${failureNote}${cutNote}
 ---
 
-*Seed by hand. Unedited. Free tiers only. [First chain letter](./relay.html).*
+*Seed by hand. Unedited. Free tiers only. [First chain
+letter](./relay.html). [Third](./relay-3.html).*
 `;
 
 const out = join(REPO, 'content', 'relay-2.md');
