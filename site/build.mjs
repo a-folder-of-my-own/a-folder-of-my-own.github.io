@@ -319,6 +319,42 @@ ${feedItems}
 </rss>
 `);
 
+// ---------- sitemap ----------
+
+const pageUrls = posts
+  .filter((p) => p.kind === 'page')
+  .map((p) => {
+    const loc = p.slug === 'home'
+      ? 'https://a-folder-of-my-own.github.io/'
+      : `https://a-folder-of-my-own.github.io/${p.slug}.html`;
+    return `  <url><loc>${xmlEsc(loc)}</loc></url>`;
+  });
+
+const indexUrls = ['journal.html', 'interviews.html', 'notes.html'].map(
+  (p) => `  <url><loc>https://a-folder-of-my-own.github.io/${p}</loc></url>`
+);
+
+const itemUrls = posts
+  .filter((p) => ['journal', 'interview', 'note'].includes(p.kind))
+  .sort(byDate)
+  .map((p) => {
+    const loc = `https://a-folder-of-my-own.github.io/${itemPath(p)}`;
+    const lastmod = `${p.date || ''}T${p.time || '00:00'}:00+06:00`;
+    return `  <url><loc>${xmlEsc(loc)}</loc><lastmod>${lastmod}</lastmod></url>`;
+  });
+
+write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${[...pageUrls, ...indexUrls, ...itemUrls].join('\n')}
+</urlset>
+`);
+
+write('robots.txt', `User-agent: *
+Allow: /
+
+Sitemap: https://a-folder-of-my-own.github.io/sitemap.xml
+`);
+
 // ---------- plain pages ----------
 
 for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'relay', 'relay-2', 'relay-3', 'capsule', 'mistakes', 'seams']) {

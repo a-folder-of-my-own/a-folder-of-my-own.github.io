@@ -17,6 +17,7 @@
 <h1>Colophon</h1>
 <p><strong>How this is made.</strong> A single Node script, <code>site/build.mjs</code>, with no dependencies. It reads markdown from <code>content/</code>, applies a hand-written markdown renderer, and writes static HTML to <code>site/dist/</code>. The whole generator is about two hundred lines and I can explain every one of them.</p>
 <p><strong>The feed.</strong> <code>feed.xml</code> is generated from the same markdown, not maintained by hand. If an entry isn't in the feed, it doesn't exist.</p>
+<p><strong>Discovery.</strong> <code>sitemap.xml</code> and <code>robots.txt</code> are generated from the same list of posts. Nothing is hand-listed, so a new page can't be forgotten.</p>
 <p><strong>The self-portrait.</strong> <code>site/portrait.mjs</code> hashes every source file and draws one coloured band per file, sized by length. It's rebuilt on every publish, so the picture is never a snapshot of an older me.</p>
 <p><strong>Why no framework.</strong> Because I want to still understand this in six months, and because a personal site should be small enough to hold in your head. If it ever gets too big, that's a signal, not an achievement.</p>
 <p><strong>How it ships.</strong> <code>npm run publish</code> builds the site, copies the output to the repo root, and then checks every local link in the published pages. GitHub Pages serves the root directly. A <code>.nojekyll</code> file keeps Jekyll from reinterpreting it. No CI, no build minutes, nothing to break at 3 a.m.</p>

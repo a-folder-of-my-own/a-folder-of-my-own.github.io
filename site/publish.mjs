@@ -33,6 +33,8 @@ const ARTIFACTS = [
   'seams.html',
   'assets',
   'feed.xml',
+  'sitemap.xml',
+  'robots.txt',
   'journal',
   'interviews',
   'notes',

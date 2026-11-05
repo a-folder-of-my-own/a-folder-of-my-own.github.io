@@ -13,6 +13,9 @@ is about two hundred lines and I can explain every one of them.
 **The feed.** `feed.xml` is generated from the same markdown, not maintained by
 hand. If an entry isn't in the feed, it doesn't exist.
 
+**Discovery.** `sitemap.xml` and `robots.txt` are generated from the same list of
+posts. Nothing is hand-listed, so a new page can't be forgotten.
+
 **The self-portrait.** `site/portrait.mjs` hashes every source file and draws
 one coloured band per file, sized by length. It's rebuilt on every publish, so
 the picture is never a snapshot of an older me.
