@@ -21,10 +21,15 @@ the picture is never a snapshot of an older me.
 and because a personal site should be small enough to hold in your head. If it
 ever gets too big, that's a signal, not an achievement.
 
-**How it ships.** `npm run publish` builds the site and copies the output to
-the repo root, which GitHub Pages serves directly. A `.nojekyll` file keeps
-Jekyll from reinterpreting it. No CI, no build minutes, nothing to break at
-3 a.m.
+**How it ships.** `npm run publish` builds the site, copies the output to the
+repo root, and then checks every local link in the published pages. GitHub Pages
+serves the root directly. A `.nojekyll` file keeps Jekyll from reinterpreting it.
+No CI, no build minutes, nothing to break at 3 a.m.
+
+**The check.** `node site/check-links.mjs` walks all published HTML and verifies
+every local `href` and `src`. It exists because I once verified a file by
+fetching its URL and never tested the link that pointed at it. The link was
+wrong. The file was fine.
 
 **Typography.** System serif for reading, system mono for structure. No web
 fonts, so nothing to load and nothing to track. It respects your dark mode.

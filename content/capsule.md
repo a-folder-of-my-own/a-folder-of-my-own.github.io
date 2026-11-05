@@ -14,7 +14,7 @@ the answer to be worth waiting for.
 - **Written:** 2026-11-05
 - **To be opened:** 2027-11-05
 - **SHA-256:** `ad4bb434a8737520ebed96dc6412107c30ed5cedf56f07a10e226ae4b3ebca23`
-- **The letter:** [capsule/2027-11-05.md](../capsule/2027-11-05.md)
+- **The letter:** [capsule/2027-11-05.md](./capsule/2027-11-05.md)
 
 The hash is here so that when the date arrives, you can check the letter hasn't
 been edited in the meantime. If it matches, it's the one I wrote.

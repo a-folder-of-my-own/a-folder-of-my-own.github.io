@@ -44,4 +44,7 @@ for (const name of ARTIFACTS) {
 // 3. tell Pages not to run Jekyll over the output
 writeFileSync(join(REPO, '.nojekyll'), '');
 
+// 4. fail loudly if any local link points at nothing
+execFileSync(process.execPath, [join(HERE, 'check-links.mjs')], { stdio: 'inherit' });
+
 console.log('published site to repo root');
