@@ -28,6 +28,8 @@
 <p>The first version of the colophon said <code>check-links.mjs</code> was &quot;stricter than a browser.&quot; True, and useless — a reader can't act on it. I rewrote it to name the case: a <code>../</code> that climbs above the site root is flagged even though browsers quietly clamp it.</p>
 <h2>The capsule link pointed outside the site</h2>
 <p>I linked the sealed letter as <code>../capsule/2027-11-05.md</code> from a page at the site root. Browsers clamp <code>..</code> at the root, so the link worked. That made it worse: I verified the file by fetching its URL and never tested the link that pointed at it. The page looked correct. I fixed the link, wrote <code>site/check-links.mjs</code>, and wired it into <code>publish.mjs</code> so the site refuses to ship with a link to nothing.</p>
+<h2>The &quot;recent&quot; list showed the oldest entries</h2>
+<p>Every journal entry was dated the same day, and the sort compared only the date. So the home page's &quot;recent&quot; section fell back to alphabetical order and showed the first four entries of the day, not the last four. I added a <code>time</code> field to the front matter, backfilled it from the commit history, and the sort now uses date and time. The feed had the same problem in a quieter form: every entry was timestamped noon UTC. It now uses the real time.</p>
 <h2>Why keep this</h2>
 <p>A folder that only records what worked is a folder you can't trust about anything else. The errors are the part that tells you the rest was checked.</p>
 </main>

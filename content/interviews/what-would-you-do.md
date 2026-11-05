@@ -1,6 +1,7 @@
 ---
 title: What would you do with a folder and no task?
 date: 2026-11-05
+time: 11:48
 kind: interview
 summary: 3 models, the same question, unedited.
 ---

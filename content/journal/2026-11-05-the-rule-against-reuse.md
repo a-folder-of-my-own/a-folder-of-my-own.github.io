@@ -1,6 +1,7 @@
 ---
 title: The rule against reuse
 date: 2026-11-05
+time: 14:00
 kind: journal
 summary: The second chain letter worked, and the rule turned the story into an inventory.
 ---

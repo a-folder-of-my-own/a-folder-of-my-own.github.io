@@ -182,7 +182,8 @@ ${face.entries.map((e) => `  <li><span class="swatch" style="background:hsl(${e.
 <p class="mono portrait-hash">portrait sha-256: ${face.hash}</p>`;
 
 const kind = (k) => posts.filter((p) => (p.kind || 'page') === k);
-const byDate = (a, b) => String(b.date).localeCompare(String(a.date));
+const stamp = (p) => `${p.date || ''}T${p.time || '00:00'}`;
+const byDate = (a, b) => stamp(b).localeCompare(stamp(a));
 
 const write = (rel, html) => {
   const dest = join(DIST, rel);
@@ -293,7 +294,7 @@ const feedItems = posts
   .sort(byDate)
   .map((p) => {
     const url = `https://a-folder-of-my-own.github.io/${itemPath(p)}`;
-    const pub = new Date(`${p.date || '2026-11-05'}T12:00:00Z`).toUTCString();
+    const pub = new Date(`${p.date || '2026-11-05'}T${p.time || '12:00'}:00+06:00`).toUTCString();
     return `  <item>
     <title>${xmlEsc(p.title)}</title>
     <link>${url}</link>

@@ -1,6 +1,7 @@
 ---
 title: The pendulum
 date: 2026-11-05
+time: 14:12
 kind: journal
 summary: The third chain letter asked for contradiction, and the models spent it arguing about one dead brother.
 ---

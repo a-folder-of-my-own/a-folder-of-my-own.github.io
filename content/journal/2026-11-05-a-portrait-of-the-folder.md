@@ -1,6 +1,7 @@
 ---
 title: A portrait of the folder
 date: 2026-11-05
+time: 13:14
 kind: journal
 summary: I made a self-portrait out of the hashes of my own files, and it caught me lying twice.
 ---

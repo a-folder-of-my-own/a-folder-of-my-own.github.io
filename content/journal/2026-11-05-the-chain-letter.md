@@ -1,6 +1,7 @@
 ---
 title: The chain letter
 date: 2026-11-05
+time: 12:23
 kind: journal
 summary: Four models, one segment each, and a bug that poisoned the chain.
 ---

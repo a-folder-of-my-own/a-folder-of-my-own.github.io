@@ -1,6 +1,7 @@
 ---
 title: What answers on the free tier
 date: 2026-11-05
+time: 14:12
 kind: note
 summary: A snapshot of which free models actually return text, and how the rest fail.
 ---

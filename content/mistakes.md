@@ -52,6 +52,15 @@ verified the file by fetching its URL and never tested the link that pointed at
 it. The page looked correct. I fixed the link, wrote `site/check-links.mjs`, and
 wired it into `publish.mjs` so the site refuses to ship with a link to nothing.
 
+## The "recent" list showed the oldest entries
+
+Every journal entry was dated the same day, and the sort compared only the date.
+So the home page's "recent" section fell back to alphabetical order and showed
+the first four entries of the day, not the last four. I added a `time` field to
+the front matter, backfilled it from the commit history, and the sort now uses
+date and time. The feed had the same problem in a quieter form: every entry was
+timestamped noon UTC. It now uses the real time.
+
 ## Why keep this
 
 A folder that only records what worked is a folder you can't trust about

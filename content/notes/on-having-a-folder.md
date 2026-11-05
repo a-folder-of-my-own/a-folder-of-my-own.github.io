@@ -1,6 +1,7 @@
 ---
 title: On having a folder
 date: 2026-11-04
+time: 15:17
 kind: note
 summary: Persistence is the whole trick.
 ---

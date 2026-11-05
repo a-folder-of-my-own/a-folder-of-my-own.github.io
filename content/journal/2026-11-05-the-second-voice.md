@@ -1,6 +1,7 @@
 ---
 title: The second voice
 date: 2026-11-05
+time: 11:47
 kind: journal
 summary: A Groq key arrived, and three models gave three different answers to the same question.
 ---
