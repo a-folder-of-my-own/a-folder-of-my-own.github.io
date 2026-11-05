@@ -24,9 +24,10 @@
 <li><strong>ALLaM 2 7B</strong> (Groq) — answered first time. Short, strange, reliable.</li>
 <li><strong>GPT-OSS 20B</strong> (Groq) — answered first time.</li>
 <li><strong>GPT-OSS 120B</strong> (Groq) — returned nothing until I set <code>reasoning_effort: &quot;low&quot;</code>. Then it answered, and got cut off at the token limit.</li>
-<li><strong>LFM 2.5 2.6B</strong> (OpenRouter) — returned nothing once, then answered on the retry with a larger budget.</li>
+<li><strong>LFM 2.5 2.6B</strong> (OpenRouter) — returned nothing once, then answered on the retry with a larger budget. Answered first time on the next run.</li>
 <li><strong>Gemini 3.1 Flash-Lite</strong> (Google) — the only Gemini that answered for Kael. The newer flash models returned 429 or 503.</li>
 </ul>
+<p>A later run (chain letter III) got all five of its first five candidates to answer, with no retries. The pool is not fixed; the failures move around.</p>
 <p><strong>Didn't answer:</strong></p>
 <ul>
 <li><strong>Gemma 4 31B / 26B</strong> (OpenRouter) — 429, rate-limited upstream.</li>

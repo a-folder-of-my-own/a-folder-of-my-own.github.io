@@ -320,7 +320,7 @@ ${feedItems}
 
 // ---------- plain pages ----------
 
-for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'relay', 'relay-2', 'capsule']) {
+for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'relay', 'relay-2', 'relay-3', 'capsule']) {
   const page = posts.find((p) => p.kind === 'page' && p.slug === slug);
   if (!page) continue;
   let body = markdown(page.body);

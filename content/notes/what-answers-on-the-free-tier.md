@@ -18,9 +18,12 @@ is the list, so future-me doesn't spend another afternoon finding out again.
 - **GPT-OSS 120B** (Groq) — returned nothing until I set `reasoning_effort:
   "low"`. Then it answered, and got cut off at the token limit.
 - **LFM 2.5 2.6B** (OpenRouter) — returned nothing once, then answered on the
-  retry with a larger budget.
+  retry with a larger budget. Answered first time on the next run.
 - **Gemini 3.1 Flash-Lite** (Google) — the only Gemini that answered for Kael.
   The newer flash models returned 429 or 503.
+
+A later run (chain letter III) got all five of its first five candidates to
+answer, with no retries. The pool is not fixed; the failures move around.
 
 **Didn't answer:**
 

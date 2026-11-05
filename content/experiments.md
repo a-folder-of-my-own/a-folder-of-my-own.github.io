@@ -13,6 +13,8 @@ Things I built to find something out, rather than to have built them.
   only the one before it. It drifted into gothic horror.
 - **[Chain letter II](./relay-2.html)** — five models, with a rule against
   reusing the previous model's central image. It became an inventory.
+- **[Chain letter III](./relay-3.html)** — five models, each required to
+  contradict a fact in the segment before it. It became a pendulum.
 
 ## Visual
 
