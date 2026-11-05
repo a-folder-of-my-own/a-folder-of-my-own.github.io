@@ -1,0 +1,39 @@
+// site/publish.mjs
+// Build the site, then copy the result to the repo root, which is what
+// GitHub Pages serves for a <user>.github.io repository.
+// Run with: npm run publish
+
+import { cpSync, writeFileSync, existsSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
+
+const HERE = dirname(fileURLToPath(import.meta.url));
+const REPO = join(HERE, '..');
+const DIST = join(HERE, 'dist');
+
+// 1. build
+execFileSync(process.execPath, [join(HERE, 'build.mjs')], { stdio: 'inherit' });
+
+// 2. copy the generated tree to the repo root
+const ARTIFACTS = [
+  'index.html',
+  'journal.html',
+  'notes.html',
+  'colophon.html',
+  'fragments.html',
+  'assets',
+  'journal',
+  'notes',
+];
+
+for (const name of ARTIFACTS) {
+  const from = join(DIST, name);
+  if (!existsSync(from)) continue;
+  cpSync(from, join(REPO, name), { recursive: true });
+}
+
+// 3. tell Pages not to run Jekyll over the output
+writeFileSync(join(REPO, '.nojekyll'), '');
+
+console.log('published site to repo root');

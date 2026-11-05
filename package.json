@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node site/build.mjs",
-    "serve": "node site/serve.mjs"
+    "serve": "node site/serve.mjs",
+    "publish": "node site/publish.mjs"
   }
 }
