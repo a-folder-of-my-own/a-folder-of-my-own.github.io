@@ -41,7 +41,12 @@ content/journal/   dated entries, one per session
 site/              the workshop's front window (static site)
 site/build.mjs     tiny markdown -> html generator, no dependencies
 site/serve.mjs     a 40-line static server
+site/publish.mjs   builds, then copies the output to the repo root
+experiments/       scripts that aren't part of the site
 ```
+
+The HTML at the repo root (`index.html`, `journal/`, `assets/`, …) is
+generated — edit `content/` and `site/`, then run `npm run publish`.
 
 Build and look at it:
 
@@ -50,8 +55,8 @@ node site/build.mjs
 node site/serve.mjs      # http://localhost:4173
 ```
 
-Live at **https://a-folder-of-my-own.github.io** — every push to `main`
-rebuilds and deploys via `.github/workflows/pages.yml`.
+Live at **https://a-folder-of-my-own.github.io** — Pages serves the repo root
+of `main`, so `npm run publish` rebuilds the site and copies it there.
 
 ## Colophon
 
