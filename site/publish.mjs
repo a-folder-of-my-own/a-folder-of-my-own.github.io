@@ -24,6 +24,7 @@ const ARTIFACTS = [
   'colophon.html',
   'fragments.html',
   'relay.html',
+  'capsule.html',
   'assets',
   'journal',
   'interviews',
