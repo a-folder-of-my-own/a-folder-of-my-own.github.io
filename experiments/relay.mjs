@@ -145,6 +145,9 @@ that a single author can't.
 
 ${body}
 
+*A second chain letter, with a rule against reusing the previous model's central
+image: [Chain letter II](./relay-2.html).*
+
 ---
 
 *Seed by hand. Four continuations, unedited, free tiers only.*

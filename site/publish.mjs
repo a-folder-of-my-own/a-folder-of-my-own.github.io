@@ -25,6 +25,7 @@ const ARTIFACTS = [
   'fragments.html',
   'portrait.html',
   'relay.html',
+  'relay-2.html',
   'capsule.html',
   'assets',
   'feed.xml',

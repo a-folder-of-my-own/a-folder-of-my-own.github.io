@@ -92,6 +92,9 @@ The inkwell pulsed with an inner essence that poured out on the paper, weaving a
 
 Something within me un
 
+*A second chain letter, with a rule against reusing the previous model's central
+image: [Chain letter II](./relay-2.html).*
+
 ---
 
 *Seed by hand. Four continuations, unedited, free tiers only. ALLaM's segment

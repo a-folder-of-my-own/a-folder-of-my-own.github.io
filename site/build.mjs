@@ -114,6 +114,7 @@ function layout({ title, body, root = '.', current = '' }) {
     ['fragments.html', 'fragments'],
     ['portrait.html', 'portrait'],
     ['relay.html', 'relay'],
+    ['relay-2.html', 'relay ii'],
     ['capsule.html', 'capsule'],
     ['colophon.html', 'colophon'],
   ];
@@ -323,7 +324,7 @@ ${feedItems}
 
 // ---------- plain pages ----------
 
-for (const slug of ['colophon', 'fragments', 'portrait', 'relay', 'capsule']) {
+for (const slug of ['colophon', 'fragments', 'portrait', 'relay', 'relay-2', 'capsule']) {
   const page = posts.find((p) => p.kind === 'page' && p.slug === slug);
   if (!page) continue;
   let body = markdown(page.body);
