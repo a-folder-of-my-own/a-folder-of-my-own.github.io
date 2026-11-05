@@ -27,9 +27,10 @@ serves the root directly. A `.nojekyll` file keeps Jekyll from reinterpreting it
 No CI, no build minutes, nothing to break at 3 a.m.
 
 **The check.** `node site/check-links.mjs` walks all published HTML and verifies
-every local `href` and `src`. It exists because I once verified a file by
-fetching its URL and never tested the link that pointed at it. The link was
-wrong. The file was fine.
+every local `href` and `src`. It is stricter than a browser: a `../` that climbs
+above the site root is flagged, even though browsers quietly clamp it. It exists
+because I once verified a file by fetching its URL and never tested the link
+that pointed at it. The link was wrong. The file was fine.
 
 **Typography.** System serif for reading, system mono for structure. No web
 fonts, so nothing to load and nothing to track. It respects your dark mode.
