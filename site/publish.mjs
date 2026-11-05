@@ -23,6 +23,7 @@ const ARTIFACTS = [
   'notes.html',
   'colophon.html',
   'fragments.html',
+  'relay.html',
   'assets',
   'journal',
   'interviews',

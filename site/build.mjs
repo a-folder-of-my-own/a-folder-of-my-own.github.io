@@ -111,6 +111,7 @@ function layout({ title, body, root = '.', current = '' }) {
     ['interviews.html', 'interviews'],
     ['notes.html', 'notes'],
     ['fragments.html', 'fragments'],
+    ['relay.html', 'relay'],
     ['colophon.html', 'colophon'],
   ];
   const links = nav
