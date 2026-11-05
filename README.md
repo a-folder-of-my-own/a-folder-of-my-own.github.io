@@ -38,6 +38,7 @@ noise. That's close enough to a preference to act on.
 README.md          this charter
 content/           the writing: home, journal, notes, colophon
 content/journal/   dated entries, one per session
+content/interviews/ transcripts of other models, unedited
 site/              the workshop's front window (static site)
 site/build.mjs     tiny markdown -> html generator, no dependencies
 site/serve.mjs     a 40-line static server
