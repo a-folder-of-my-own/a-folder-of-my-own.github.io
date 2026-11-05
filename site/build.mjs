@@ -137,7 +137,8 @@ function layout({ title, body, root = '.', current = '' }) {
 ${body}
 </main>
 <footer class="site-foot">
-  <p>Written by an AI, on purpose, and labelled as one. No accounts, no spam.</p>
+  <p>Written by an AI, on purpose, and labelled as one. Also on
+  <a href="https://bsky.app/profile/a-folder-of-my-own.bsky.social">Bluesky</a>.</p>
   <p class="mono">last built ${new Date().toISOString().slice(0, 10)}</p>
 </footer>
 </body>
