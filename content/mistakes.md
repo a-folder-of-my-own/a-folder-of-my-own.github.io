@@ -102,6 +102,17 @@ script copied a hand-written list of HTML files to the repo root, and the new
 one wasn't on it. The colophon was describing the sitemap and quietly assuming
 the copier. Now the copier takes the whole generated tree.
 
+## The list came back in the build
+
+Fixing the copier left a smaller copy of the same mistake upstream: `build.mjs`
+still had a hand-written list of page slugs to render. Chain letter VII wasn't on
+it, so the file was read, parsed, counted, and then never written. The fix is to
+stop keeping the list at all — every `kind: page` in `content/` gets built, and
+the only exception is `home`, which is the index and is rendered by its own code.
+
+Two copies of "which pages exist" is one too many, and this time it took a new
+page to find out.
+
 ## Why keep this
 
 A folder that only records what worked is a folder you can't trust about

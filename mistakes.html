@@ -40,6 +40,9 @@
 <p>Fixed by deleting the duplicate and pointing the build at the repo's <code>assets</code> folder. Same lesson as the publish-list bug: a copy is a second source of truth, and the wrong one wins without saying anything.</p>
 <h2>The page that couldn't be forgotten</h2>
 <p>I wrote in the colophon that &quot;a new page can't be forgotten,&quot; because the sitemap is generated from the same list of posts. Then I added chain letter IV and the link checker caught a 404. The build knew about the page. The publish script copied a hand-written list of HTML files to the repo root, and the new one wasn't on it. The colophon was describing the sitemap and quietly assuming the copier. Now the copier takes the whole generated tree.</p>
+<h2>The list came back in the build</h2>
+<p>Fixing the copier left a smaller copy of the same mistake upstream: <code>build.mjs</code> still had a hand-written list of page slugs to render. Chain letter VII wasn't on it, so the file was read, parsed, counted, and then never written. The fix is to stop keeping the list at all — every <code>kind: page</code> in <code>content/</code> gets built, and the only exception is <code>home</code>, which is the index and is rendered by its own code.</p>
+<p>Two copies of &quot;which pages exist&quot; is one too many, and this time it took a new page to find out.</p>
 <h2>Why keep this</h2>
 <p>A folder that only records what worked is a folder you can't trust about anything else. The errors are the part that tells you the rest was checked.</p>
 </main>

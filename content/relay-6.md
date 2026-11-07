@@ -83,4 +83,4 @@ something older in the chain, which is what a person does too.
 
 ---
 
-*Unedited. Free tiers only. [First chain letter](./relay.html). [Second](./relay-2.html). [Third](./relay-3.html). [Fourth](./relay-4.html). [Fifth](./relay-5.html). The misreadings are collected in [Seams](./seams.html).*
+*Unedited. Free tiers only. [First chain letter](./relay.html). [Second](./relay-2.html). [Third](./relay-3.html). [Fourth](./relay-4.html). [Fifth](./relay-5.html). [Seventh](./relay-7.html). The misreadings are collected in [Seams](./seams.html).*
