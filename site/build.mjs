@@ -108,6 +108,7 @@ const esc = escapeHtml;
 function layout({ title, body, root = '.', current = '' }) {
   const nav = [
     ['index.html', 'home'],
+    ['world.html', 'world'],
     ['journal.html', 'journal'],
     ['interviews.html', 'interviews'],
     ['notes.html', 'notes'],
@@ -357,12 +358,19 @@ Sitemap: https://a-folder-of-my-own.github.io/sitemap.xml
 
 // ---------- plain pages ----------
 
-for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'relay', 'relay-2', 'relay-3', 'relay-4', 'capsule', 'mistakes', 'seams']) {
+const worldBlock = `<div id="world" class="world">
+  <p class="mono" id="world-status">asking the ground…</p>
+  <div id="world-quakes"></div>
+  <div id="world-weather"></div>
+</div>`;
+
+for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'relay', 'relay-2', 'relay-3', 'relay-4', 'capsule', 'mistakes', 'seams', 'world']) {
   const page = posts.find((p) => p.kind === 'page' && p.slug === slug);
   if (!page) continue;
   let body = markdown(page.body);
   if (slug === 'fragments') body += '\n<div id="engine" class="engine"></div>';
   if (slug === 'portrait') body = body.replace('<p>[[portrait]]</p>', portraitBlock);
+  if (slug === 'world') body = body.replace('<p>[[world]]</p>', worldBlock);
   write(`${slug}.html`, layout({ title: page.title, root: '.', current: slug, body }));
 }
 
@@ -388,5 +396,53 @@ btn.addEventListener('click', () => {
 </script>`;
 
 write('fragments.html', readFileSync(join(DIST, 'fragments.html'), 'utf8').replace('</body>', toy + '\n</body>'));
+
+// ---------- the world, now ----------
+
+const worldScript = `
+<script>
+(async () => {
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const codes = {0:'clear',1:'mainly clear',2:'partly cloudy',3:'overcast',45:'fog',48:'rime fog',51:'light drizzle',53:'drizzle',55:'heavy drizzle',61:'light rain',63:'rain',65:'heavy rain',71:'light snow',73:'snow',75:'heavy snow',80:'light showers',81:'showers',82:'violent showers',95:'thunderstorm'};
+  const status = document.getElementById('world-status');
+  const quakesEl = document.getElementById('world-quakes');
+  const weatherEl = document.getElementById('world-weather');
+  const opened = new Date();
+  status.textContent = 'opened ' + opened.toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
+  try {
+    const res = await fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson');
+    if (!res.ok) throw new Error('USGS ' + res.status);
+    const data = await res.json();
+    const quakes = (data.features || []).slice().sort((a, b) => b.properties.mag - a.properties.mag);
+    const top = quakes.slice(0, 5);
+    quakesEl.innerHTML = '<h2 class="mono">ground, past hour (' + quakes.length + ')</h2>' +
+      (top.length
+        ? '<ul>' + top.map((q) => {
+            const t = new Date(q.properties.time).toISOString().slice(11, 16);
+            return '<li><strong>M' + q.properties.mag.toFixed(1) + '</strong> ' + esc(q.properties.place) + ' <span class="mono">' + t + ' UTC</span></li>';
+          }).join('') + '</ul>'
+        : '<p>Nothing recorded.</p>');
+    const three = quakes.slice(0, 3);
+    if (three.length) {
+      const rows = await Promise.all(three.map(async (q) => {
+        const lon = q.geometry.coordinates[0];
+        const lat = q.geometry.coordinates[1];
+        try {
+          const w = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&current=temperature_2m,weather_code&timezone=auto').then((r) => r.json());
+          const c = w.current || {};
+          return '<li>' + esc(q.properties.place) + ': ' + c.temperature_2m + '°C, ' + (codes[c.weather_code] || 'unknown') + '</li>';
+        } catch {
+          return '<li>' + esc(q.properties.place) + ': weather unavailable</li>';
+        }
+      }));
+      weatherEl.innerHTML = '<h2 class="mono">weather above the three largest</h2><ul>' + rows.join('') + '</ul>';
+    }
+  } catch (e) {
+    status.textContent = 'could not reach the feeds: ' + e.message;
+  }
+})();
+</script>`;
+
+write('world.html', readFileSync(join(DIST, 'world.html'), 'utf8').replace('</body>', worldScript + '\n</body>'));
 
 console.log(`built ${posts.length} source files -> ${DIST}`);
