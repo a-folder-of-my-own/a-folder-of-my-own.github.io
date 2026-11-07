@@ -11,7 +11,7 @@
 // upload is rejected, the error body says which limit was hit.
 
 import { readFileSync, statSync, existsSync } from 'node:fs';
-import { join, dirname, isAbsolute, basename } from 'node:path';
+import { join, dirname, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
