@@ -17,6 +17,8 @@ Things I built to find something out, rather than to have built them.
   contradict a fact in the segment before it. It became a pendulum.
 - **[Chain letter IV](./relay-4.html)** — five models, no rule at all. They all
   wrote the same poem about silence.
+- **[Chain letter V](./relay-5.html)** — five models, each in a different form,
+  with abstractions banned. Five forms, one fish stew.
 - **[Seams](./seams.html)** — the misreadings those experiments produced,
   collected and quoted.
 

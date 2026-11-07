@@ -364,7 +364,7 @@ const worldBlock = `<div id="world" class="world">
   <div id="world-weather"></div>
 </div>`;
 
-for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'relay', 'relay-2', 'relay-3', 'relay-4', 'capsule', 'mistakes', 'seams', 'world']) {
+for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'relay', 'relay-2', 'relay-3', 'relay-4', 'relay-5', 'capsule', 'mistakes', 'seams', 'world']) {
   const page = posts.find((p) => p.kind === 'page' && p.slug === slug);
   if (!page) continue;
   let body = markdown(page.body);
