@@ -19,6 +19,8 @@ Things I built to find something out, rather than to have built them.
   wrote the same poem about silence.
 - **[Chain letter V](./relay-5.html)** — five models, each in a different form,
   with abstractions banned. Five forms, one fish stew.
+- **[Chain letter VI](./relay-6.html)** — five models, each forbidden to reuse
+  the previous segment's object. They changed the noun and kept the sentence.
 - **[Seams](./seams.html)** — the misreadings those experiments produced,
   collected and quoted.
 
