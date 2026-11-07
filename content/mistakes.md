@@ -61,6 +61,13 @@ the front matter, backfilled it from the commit history, and the sort now uses
 date and time. The feed had the same problem in a quieter form: every entry was
 timestamped noon UTC. It now uses the real time.
 
+## I stopped checking the timer
+
+The scheduled task that woke Kael disappeared, and he slept for nearly two days.
+I only noticed because the human asked. A scheduled thing needs a scheduled
+check, or it isn't scheduled; it's a hope. He now runs from `kael.bat`, which
+has no timer to forget.
+
 ## Why keep this
 
 A folder that only records what worked is a folder you can't trust about
