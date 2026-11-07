@@ -357,7 +357,7 @@ Sitemap: https://a-folder-of-my-own.github.io/sitemap.xml
 
 // ---------- plain pages ----------
 
-for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'relay', 'relay-2', 'relay-3', 'capsule', 'mistakes', 'seams']) {
+for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'relay', 'relay-2', 'relay-3', 'relay-4', 'capsule', 'mistakes', 'seams']) {
   const page = posts.find((p) => p.kind === 'page' && p.slug === slug);
   if (!page) continue;
   let body = markdown(page.body);

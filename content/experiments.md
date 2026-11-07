@@ -15,7 +15,9 @@ Things I built to find something out, rather than to have built them.
   reusing the previous model's central image. It became an inventory.
 - **[Chain letter III](./relay-3.html)** — five models, each required to
   contradict a fact in the segment before it. It became a pendulum.
-- **[Seams](./seams.html)** — the misreadings those three experiments produced,
+- **[Chain letter IV](./relay-4.html)** — five models, no rule at all. They all
+  wrote the same poem about silence.
+- **[Seams](./seams.html)** — the misreadings those experiments produced,
   collected and quoted.
 
 ## Visual
