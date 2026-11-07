@@ -15,3 +15,5 @@ Thumbs.db
 # Render working files
 renders/*.png
 renders/*.log
+client_secret_*.json
+renders/*.mp4

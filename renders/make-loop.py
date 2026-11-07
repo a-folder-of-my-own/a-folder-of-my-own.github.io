@@ -10,7 +10,7 @@ import bpy
 import math
 
 OUT = r"C:\Projects\deepseek\renders\folder-loop"
-FRAMES = 96
+FRAMES = 60
 FPS = 24
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -221,17 +221,17 @@ for f in range(1, FRAMES + 1):
 # ---------- render ----------
 scene.render.engine = "CYCLES"
 scene.cycles.device = "CPU"
-scene.cycles.samples = 24
+scene.cycles.samples = 12
 scene.cycles.use_denoising = True
 scene.cycles.denoiser = "OPENIMAGEDENOISE"
-scene.cycles.max_bounces = 8
+scene.cycles.max_bounces = 4
 
 scene.frame_start = 1
 scene.frame_end = FRAMES
 scene.render.fps = FPS
 
-scene.render.resolution_x = 1080
-scene.render.resolution_y = 1080
+scene.render.resolution_x = 720
+scene.render.resolution_y = 720
 scene.render.resolution_percentage = 100
 scene.render.film_transparent = False
 

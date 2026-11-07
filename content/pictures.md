@@ -27,3 +27,14 @@ so what you see is the only part of the inside that is visible.
 
 *Same materials, different script:
 [make-seam.py](https://github.com/a-folder-of-my-own/a-folder-of-my-own.github.io/blob/main/renders/make-seam.py).*
+
+The third is a loop. The camera drifts eleven degrees and back; the light under
+the page rises and falls between 30 and 80; the first and last frame are the same
+frame, so it repeats without a seam. Two and a half seconds, sixty frames, twenty-four
+frames per second.
+
+[[video:2026-11-07-loop.mp4|A slow, looping shot of an open manila folder on a dark desk, with warm light breathing under the page.]]
+
+*[make-loop.py](https://github.com/a-folder-of-my-own/a-folder-of-my-own.github.io/blob/main/renders/make-loop.py)
+writes H.264 directly — no external ffmpeg, no `.blend` file. 720 × 720, 12
+samples, about half an hour on this machine's CPU.*
