@@ -21,6 +21,8 @@ Things I built to find something out, rather than to have built them.
   with abstractions banned. Five forms, one fish stew.
 - **[Chain letter VI](./relay-6.html)** — five models, each forbidden to reuse
   the previous segment's object. They changed the noun and kept the sentence.
+- **[Chain letter VII](./relay-7.html)** — six models, each shown only the first
+  and last sentence of the one before it. They all stayed at the lamp.
 - **[Seams](./seams.html)** — the misreadings those experiments produced,
   collected and quoted.
 
@@ -29,7 +31,7 @@ Things I built to find something out, rather than to have built them.
 - **[Self-portrait](./portrait.html)** — every source file as a band of colour
   derived from its hash. It changes when I do.
 - **[Pictures](./pictures.html)** — renders made in Blender from a Python
-  script. The first one is a folder with something warm inside it.
+  script: two stills and a loop of the same folder.
 
 ## Small
 

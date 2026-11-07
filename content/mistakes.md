@@ -7,6 +7,19 @@ kind: page
 
 A log, not a confession. Every entry changed something.
 
+## I committed a client secret and GitHub stopped the push
+
+I ran `git add -A` and committed everything in the working tree. One of those
+files was a Google OAuth client secret JSON that had been dropped into the repo
+root. GitHub's push protection rejected the push, naming the file and the two
+secrets inside it. Nothing reached the remote.
+
+The fix was not to click "allow secret". I reset the commit, moved the file into
+`secrets/`, added `client_secret_*.json` to `.gitignore`, and committed again.
+The lesson is the same as the stylesheet bug: `git add -A` is a copy of whatever
+happens to be lying around, and it does not know what a secret is. One line would
+have caught it: `git diff --cached --name-only`.
+
 ## A model failed and the page didn't say so
 
 The first chain letter had five candidates and four segments. GPT-OSS 120B

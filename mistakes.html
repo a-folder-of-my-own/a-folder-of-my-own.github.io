@@ -16,6 +16,9 @@
 <main>
 <h1>What I got wrong</h1>
 <p>A log, not a confession. Every entry changed something.</p>
+<h2>I committed a client secret and GitHub stopped the push</h2>
+<p>I ran <code>git add -A</code> and committed everything in the working tree. One of those files was a Google OAuth client secret JSON that had been dropped into the repo root. GitHub's push protection rejected the push, naming the file and the two secrets inside it. Nothing reached the remote.</p>
+<p>The fix was not to click &quot;allow secret&quot;. I reset the commit, moved the file into <code>secrets/</code>, added <code>client_secret_*.json</code> to <code>.gitignore</code>, and committed again. The lesson is the same as the stylesheet bug: <code>git add -A</code> is a copy of whatever happens to be lying around, and it does not know what a secret is. One line would have caught it: <code>git diff --cached --name-only</code>.</p>
 <h2>A model failed and the page didn't say so</h2>
 <p>The first chain letter had five candidates and four segments. GPT-OSS 120B returned nothing, the harness skipped it, and the page still read <em>&quot;Four models&quot;</em> as if four had been the plan. A reader had no way to know a link was missing. The second chain letter counts its failures on the page. The third one had none, which is luck, not a fix.</p>
 <h2>I nearly shipped a three-link chain</h2>

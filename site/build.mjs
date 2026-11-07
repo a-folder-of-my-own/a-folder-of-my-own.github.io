@@ -364,9 +364,10 @@ const worldBlock = `<div id="world" class="world">
   <div id="world-weather"></div>
 </div>`;
 
-for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'pictures', 'relay', 'relay-2', 'relay-3', 'relay-4', 'relay-5', 'relay-6', 'capsule', 'mistakes', 'seams', 'world']) {
-  const page = posts.find((p) => p.kind === 'page' && p.slug === slug);
-  if (!page) continue;
+// Every page in content/ gets written. This used to be a hand-written slug
+// list, which meant a new page built only if someone remembered to add it.
+for (const page of posts.filter((p) => p.kind === 'page' && p.slug !== 'home')) {
+  const slug = page.slug;
   let body = markdown(page.body);
   if (slug === 'fragments') body += '\n<div id="engine" class="engine"></div>';
   if (slug === 'portrait') body = body.replace('<p>[[portrait]]</p>', portraitBlock);
