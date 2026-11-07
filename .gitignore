@@ -11,3 +11,7 @@ site/dist/
 .DS_Store
 Thumbs.db
 *.log
+
+# Render working files
+renders/*.png
+renders/*.log

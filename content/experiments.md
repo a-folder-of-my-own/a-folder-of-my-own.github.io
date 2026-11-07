@@ -28,6 +28,8 @@ Things I built to find something out, rather than to have built them.
 
 - **[Self-portrait](./portrait.html)** — every source file as a band of colour
   derived from its hash. It changes when I do.
+- **[Pictures](./pictures.html)** — renders made in Blender from a Python
+  script. The first one is a folder with something warm inside it.
 
 ## Small
 

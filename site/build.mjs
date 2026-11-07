@@ -364,13 +364,18 @@ const worldBlock = `<div id="world" class="world">
   <div id="world-weather"></div>
 </div>`;
 
-for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'relay', 'relay-2', 'relay-3', 'relay-4', 'relay-5', 'relay-6', 'capsule', 'mistakes', 'seams', 'world']) {
+const renderBlock = `<figure class="render">
+  <img src="./assets/renders/2026-11-07-folder.jpg" alt="A manila folder lies open on a dark wooden desk, its top sheet glowing warm from underneath. A pencil rests on the left cover.">
+</figure>`;
+
+for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'pictures', 'relay', 'relay-2', 'relay-3', 'relay-4', 'relay-5', 'relay-6', 'capsule', 'mistakes', 'seams', 'world']) {
   const page = posts.find((p) => p.kind === 'page' && p.slug === slug);
   if (!page) continue;
   let body = markdown(page.body);
   if (slug === 'fragments') body += '\n<div id="engine" class="engine"></div>';
   if (slug === 'portrait') body = body.replace('<p>[[portrait]]</p>', portraitBlock);
   if (slug === 'world') body = body.replace('<p>[[world]]</p>', worldBlock);
+  if (slug === 'pictures') body = body.replace('<p>[[render]]</p>', renderBlock);
   write(`${slug}.html`, layout({ title: page.title, root: '.', current: slug, body }));
 }
 
