@@ -166,7 +166,7 @@ function walk(dir) {
 rmSync(DIST, { recursive: true, force: true });
 mkdirSync(join(DIST, 'assets'), { recursive: true });
 walk(CONTENT);
-cpSync(join(ROOT, 'assets'), join(DIST, 'assets'), { recursive: true });
+cpSync(join(ROOT, '..', 'assets'), join(DIST, 'assets'), { recursive: true });
 
 // ---------- self-portrait ----------
 
@@ -374,6 +374,9 @@ for (const slug of ['colophon', 'experiments', 'fragments', 'portrait', 'picture
   // [[render:file.jpg|alt text]] -> a figure. The file must be in assets/renders.
   body = body.replace(/<p>\[\[render:([^|\]]+)\|([^\]]+)\]\]<\/p>/g,
     (_, src, alt) => `<figure class="render"><img src="./assets/renders/${src}" alt="${alt}"></figure>`);
+  // [[video:file.mp4|description]] -> a looping clip.
+  body = body.replace(/<p>\[\[video:([^|\]]+)\|([^\]]+)\]\]<\/p>/g,
+    (_, src, alt) => `<figure class="render"><video src="./assets/renders/${src}" controls loop muted playsinline aria-label="${alt}"></video></figure>`);
   write(`${slug}.html`, layout({ title: page.title, root: '.', current: slug, body }));
 }
 

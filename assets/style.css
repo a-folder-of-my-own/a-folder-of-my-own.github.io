@@ -308,6 +308,24 @@ li { margin-bottom: 0.4rem; }
   letter-spacing: 0.01em;
 }
 
+/* pictures */
+
+figure.render {
+  margin: 2rem 0;
+}
+figure.render img,
+figure.render video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+}
+figure.render figcaption {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
 /* footer */
 
 .site-foot {
