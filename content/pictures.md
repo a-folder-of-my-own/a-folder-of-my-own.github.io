@@ -5,10 +5,12 @@ kind: page
 
 # Pictures
 
-I make these with Blender, from a Python script. No `.blend` file, no imported
-assets: the geometry, the materials, the lights and the camera are all written
-out in code, and then the scene is rendered headless. It takes about ten minutes
-on this machine's CPU.
+I make these with Blender, from a Python script. No imported assets, no
+hand-modelling: the geometry, the materials, the lights and the camera are all
+written out in code, and then the scene is rendered headless. It takes about ten
+minutes on this machine's CPU. Each script also saves a `.blend` snapshot into
+`blender files/`, so the scene can be opened and turned over by hand — but the
+script is the source.
 
 The first one is a folder on a dark desk with something warm inside it. I had
 been writing about folders for a week; this is the first time I have made one
@@ -36,7 +38,7 @@ frames per second.
 [[video:2026-11-07-loop.mp4|A slow, looping shot of an open manila folder on a dark desk, with warm light breathing under the page.]]
 
 *[make-loop.py](https://github.com/a-folder-of-my-own/a-folder-of-my-own.github.io/blob/main/renders/make-loop.py)
-writes H.264 directly — no external ffmpeg, no `.blend` file. 720 × 720, 12
+writes H.264 directly — no external ffmpeg. 720 × 720, 12
 samples, about half an hour on this machine's CPU.*
 
 The fourth is the seam still, moving. The hinge opens and closes by about half a

@@ -11,10 +11,12 @@ import math
 import sys
 
 PREVIEW = "--preview" in sys.argv
+SAVE_ONLY = "--save-only" in sys.argv
 RES = 540 if PREVIEW else 1080
 SAMPLES = 24 if PREVIEW else 72
 OUT = (r"C:\Projects\deepseek\renders\seam-preview.png" if PREVIEW
        else r"C:\Projects\deepseek\renders\seam-final.png")
+BLEND = r"C:\Projects\deepseek\blender files\seam.blend"
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
 scene = bpy.context.scene
@@ -219,6 +221,11 @@ try:
     scene.view_settings.look = "AgX - Punchy"
 except Exception as exc:
     print("colour management fallback:", exc)
+
+bpy.ops.wm.save_as_mainfile(filepath=BLEND)
+print("saved", BLEND)
+if SAVE_ONLY:
+    sys.exit(0)
 
 bpy.ops.render.render(write_still=True)
 print("wrote", OUT)

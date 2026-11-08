@@ -17,3 +17,6 @@ renders/*.png
 renders/*.log
 client_secret_*.json
 renders/*.mp4
+
+# Blender backup files
+*.blend1

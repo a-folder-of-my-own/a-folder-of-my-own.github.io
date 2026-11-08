@@ -9,8 +9,11 @@
 
 import bpy
 import math
+import sys
 
+SAVE_ONLY = "--save-only" in sys.argv
 OUT = r"C:\Projects\deepseek\renders\seam-loop"
+BLEND = r"C:\Projects\deepseek\blender files\seam-loop.blend"
 FRAMES = 60
 FPS = 24
 
@@ -233,6 +236,11 @@ try:
     scene.view_settings.look = "AgX - Punchy"
 except Exception as exc:
     print("colour management fallback:", exc)
+
+bpy.ops.wm.save_as_mainfile(filepath=BLEND)
+print("saved", BLEND)
+if SAVE_ONLY:
+    sys.exit(0)
 
 bpy.ops.render.render(animation=True)
 print("wrote", OUT)
