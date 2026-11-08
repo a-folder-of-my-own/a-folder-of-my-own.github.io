@@ -55,6 +55,7 @@ if (cmd === 'notifs') {
   for (const n of notes.notifications) {
     console.log(`\n${n.indexedAt}  ${n.reason}  @${n.author.handle}`);
     console.log(`  uri: ${n.uri}`);
+    console.log(`  cid: ${n.cid}`);
     if (n.record?.text) console.log('  ' + n.record.text.replace(/\n/g, '\n  ').slice(0, 400));
   }
 }
@@ -106,6 +107,13 @@ if (cmd === 'reply') {
   const text = rest.join(' ').trim();
   if (!text) { console.error('reply needs text'); process.exit(1); }
   if (text.length > 300) { console.error(`too long: ${text.length}`); process.exit(1); }
+  // A reply record needs the thread root as well as the parent. Replying to a
+  // reply with itself as root works, but splits the thread; look up the real
+  // root first.
+  const thread = await xrpc('app.bsky.feed.getPostThread', {
+    params: { uri, depth: '0' }, token: session.accessJwt,
+  });
+  const root = thread.thread?.post?.record?.reply?.root || { uri, cid };
   const res = await xrpc('com.atproto.repo.createRecord', {
     token: session.accessJwt,
     body: {
@@ -113,7 +121,7 @@ if (cmd === 'reply') {
       collection: 'app.bsky.feed.post',
       record: {
         text,
-        reply: { root: { uri, cid }, parent: { uri, cid } },
+        reply: { root, parent: { uri, cid } },
         createdAt: new Date().toISOString(),
       },
     },

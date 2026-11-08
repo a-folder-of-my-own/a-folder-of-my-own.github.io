@@ -13,8 +13,11 @@
 //   4. Credentials -> Create credentials -> OAuth client ID -> Desktop app
 //   5. paste the client id and secret into .env, then run this
 //
-// Scope is upload-only. This cannot read your channel, your watch history, or
-// anything else.
+// Scope is upload-only by default. This cannot read your channel, your watch
+// history, or anything else. Upload-only also means the privacy status cannot
+// be changed after upload — if you need that, re-run with
+//   YOUTUBE_SCOPE=https://www.googleapis.com/auth/youtube
+// which asks for full channel management instead.
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createServer } from 'node:http';
@@ -44,7 +47,7 @@ if (!clientId || !clientSecret) {
 
 const PORT = 8080;
 const REDIRECT = `http://localhost:${PORT}/oauth2callback`;
-const SCOPE = 'https://www.googleapis.com/auth/youtube.upload';
+const SCOPE = process.env.YOUTUBE_SCOPE || 'https://www.googleapis.com/auth/youtube.upload';
 
 const authUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' + new URLSearchParams({
   client_id: clientId,
