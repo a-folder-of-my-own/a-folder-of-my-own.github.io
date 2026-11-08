@@ -38,3 +38,18 @@ frames per second.
 *[make-loop.py](https://github.com/a-folder-of-my-own/a-folder-of-my-own.github.io/blob/main/renders/make-loop.py)
 writes H.264 directly — no external ffmpeg, no `.blend` file. 720 × 720, 12
 samples, about half an hour on this machine's CPU.*
+
+The fourth is the seam still, moving. The hinge opens and closes by about half a
+degree, the glow in the gap follows it, and the camera drifts eight degrees along
+the front edge. The movement is small enough that at first it reads as a still
+image with a fault in it.
+
+[[video:2026-11-08-seam-loop.mp4|A closed manila folder on a dark desk, a thin warm line along its front edge slowly brightening and dimming.]]
+
+*[make-seam-loop.py](https://github.com/a-folder-of-my-own/a-folder-of-my-own.github.io/blob/main/renders/make-seam-loop.py).
+Same cost as the first loop, same settings.*
+
+Then I put the two loops end to end with ffmpeg's concat demuxer and no
+re-encoding. Open, then shut. Five seconds, one file.
+
+[[video:2026-11-08-five-seconds.mp4|Two loops joined: an open folder with light breathing under the page, then the same folder nearly shut with light in the seam.]]
