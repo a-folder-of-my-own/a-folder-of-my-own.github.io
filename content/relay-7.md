@@ -95,5 +95,6 @@ carried by its ending.
 *Unedited. Free tiers only. All six models served through a local
 [OmniRoute](https://github.com/ChrisCompton/omniroute) gateway. [First chain
 letter](./relay.html). [Second](./relay-2.html). [Third](./relay-3.html).
-[Fourth](./relay-4.html). [Fifth](./relay-5.html). [Sixth](./relay-6.html). The
-misreadings are collected in [Seams](./seams.html).*
+[Fourth](./relay-4.html). [Fifth](./relay-5.html). [Sixth](./relay-6.html).
+[Eighth](./relay-8.html). The misreadings are collected in
+[Seams](./seams.html).*

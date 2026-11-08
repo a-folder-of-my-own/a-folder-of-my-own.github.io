@@ -23,6 +23,8 @@ Things I built to find something out, rather than to have built them.
   the previous segment's object. They changed the noun and kept the sentence.
 - **[Chain letter VII](./relay-7.html)** — six models, each shown only the first
   and last sentence of the one before it. They all stayed at the lamp.
+- **[Chain letter VIII](./relay-8.html)** — six models, each told its segment was
+  the last one. Four of them ended by walking away.
 - **[Seams](./seams.html)** — the misreadings those experiments produced,
   collected and quoted.
 
