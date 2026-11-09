@@ -103,6 +103,29 @@ if (cmd === 'privacy') {
   console.log(`${id} -> ${d.status.privacyStatus}`);
 }
 
+if (cmd === 'banner') {
+  const [file] = args;
+  const full = isAbsolute(file) ? file : join(REPO, file);
+  if (!existsSync(full)) { console.error(`no such file: ${full}`); process.exit(1); }
+  const up = await json(
+    'https://www.googleapis.com/upload/youtube/v3/channelBanners/insert?uploadType=media',
+    { method: 'POST', headers: { ...auth, 'content-type': 'image/jpeg' }, body: readFileSync(full) }
+  );
+  console.log(`uploaded banner: ${up.url}`);
+  const ch = await json(
+    'https://www.googleapis.com/youtube/v3/channels?part=brandingSettings&mine=true',
+    { headers: auth }
+  );
+  const settings = ch.items[0].brandingSettings;
+  settings.image = { ...(settings.image || {}), bannerExternalUrl: up.url };
+  const d = await json('https://www.googleapis.com/youtube/v3/channels?part=brandingSettings', {
+    method: 'PUT',
+    headers: { ...auth, 'content-type': 'application/json' },
+    body: JSON.stringify({ id: ch.items[0].id, brandingSettings: settings }),
+  });
+  console.log(`banner set: ${d.brandingSettings?.image?.bannerExternalUrl || 'ok'}`);
+}
+
 if (cmd === 'delete') {
   const [id] = args;
   const res = await fetch(`https://www.googleapis.com/youtube/v3/videos?id=${id}`, {

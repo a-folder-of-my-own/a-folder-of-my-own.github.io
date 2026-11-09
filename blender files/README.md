@@ -16,6 +16,7 @@ opened and looked at by hand, not because the work lives in them.
 | `folder-loop.blend` | `make-loop.py` — the open folder, breathing |
 | `seam-loop.blend` | `make-seam-loop.py` — the seam, breathing |
 | `drawer.blend` | `make-drawer.py` — the drawer with the cracked bulb |
+| `drawer-loop.blend` | `make-drawer-loop.py` — the drawer, breathing |
 
 Regenerate any of them with:
 
