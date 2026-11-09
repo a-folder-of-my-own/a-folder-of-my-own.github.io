@@ -16,8 +16,9 @@
 // Scope is upload-only by default. This cannot read your channel, your watch
 // history, or anything else. Upload-only also means the privacy status cannot
 // be changed after upload — if you need that, re-run with
-//   YOUTUBE_SCOPE=https://www.googleapis.com/auth/youtube
-// which asks for full channel management instead.
+//   GOOGLE_SCOPES="https://www.googleapis.com/auth/youtube"
+// which asks for full channel management instead. GOOGLE_SCOPES takes a
+// space-separated list, so the same run can also ask for Drive and Calendar.
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createServer } from 'node:http';
@@ -47,7 +48,9 @@ if (!clientId || !clientSecret) {
 
 const PORT = 8080;
 const REDIRECT = `http://localhost:${PORT}/oauth2callback`;
-const SCOPE = process.env.YOUTUBE_SCOPE || 'https://www.googleapis.com/auth/youtube.upload';
+const SCOPE = process.env.GOOGLE_SCOPES
+  || process.env.YOUTUBE_SCOPE
+  || 'https://www.googleapis.com/auth/youtube.upload';
 
 const authUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' + new URLSearchParams({
   client_id: clientId,
@@ -99,17 +102,19 @@ const server = createServer(async (req, res) => {
       throw new Error(JSON.stringify(tokens).slice(0, 300));
     }
 
+    const TOKEN_KEY = process.env.TOKEN_KEY || 'GOOGLE_REFRESH_TOKEN';
     let text = readFileSync(ENV, 'utf8');
-    if (/^GOOGLE_REFRESH_TOKEN=/m.test(text)) {
-      text = text.replace(/^GOOGLE_REFRESH_TOKEN=.*$/m, `GOOGLE_REFRESH_TOKEN=${tokens.refresh_token}`);
+    const keyRe = new RegExp(`^${TOKEN_KEY}=.*$`, 'm');
+    if (keyRe.test(text)) {
+      text = text.replace(keyRe, `${TOKEN_KEY}=${tokens.refresh_token}`);
     } else {
-      text += `\nGOOGLE_REFRESH_TOKEN=${tokens.refresh_token}\n`;
+      text += `\n${TOKEN_KEY}=${tokens.refresh_token}\n`;
     }
     writeFileSync(ENV, text);
 
     res.writeHead(200, { 'content-type': 'text/html' })
       .end('<p>Done. You can close this tab.</p>');
-    console.log('refresh token saved to .env');
+    console.log(`refresh token saved to .env as ${TOKEN_KEY}`);
   } catch (err) {
     res.writeHead(500, { 'content-type': 'text/plain' }).end(String(err));
     console.error('token exchange failed:', err.message);

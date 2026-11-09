@@ -110,7 +110,27 @@ dbump.inputs["Distance"].default_value = 0.0015
 dnt.links.new(dtex.outputs["Fac"], dbump.inputs["Height"])
 dnt.links.new(dbump.outputs["Normal"], dbsdf.inputs["Normal"])
 
-cloth = mat("cloth", (0.19, 0.170, 0.145), rough=1.0)
+# Rag: a pale cloth, stained, with folds in the geometry rather than in a map.
+cloth = bpy.data.materials.new("cloth")
+cnt0 = cloth.node_tree
+cbsdf = cnt0.nodes.get("Principled BSDF")
+cbsdf.inputs["Roughness"].default_value = 1.0
+cnoise = cnt0.nodes.new("ShaderNodeTexNoise")
+cnoise.inputs["Scale"].default_value = 55.0
+cnoise.inputs["Detail"].default_value = 4.0
+cnoise.inputs["Roughness"].default_value = 0.6
+cramp = cnt0.nodes.new("ShaderNodeValToRGB")
+cramp.color_ramp.elements[0].position = 0.36
+cramp.color_ramp.elements[0].color = (0.155, 0.140, 0.120, 1.0)
+cramp.color_ramp.elements[1].position = 0.66
+cramp.color_ramp.elements[1].color = (0.205, 0.185, 0.158, 1.0)
+cnt0.links.new(cnoise.outputs["Fac"], cramp.inputs["Fac"])
+cnt0.links.new(cramp.outputs["Color"], cbsdf.inputs["Base Color"])
+cbump = cnt0.nodes.new("ShaderNodeBump")
+cbump.inputs["Strength"].default_value = 0.14
+cbump.inputs["Distance"].default_value = 0.0004
+cnt0.links.new(cnoise.outputs["Fac"], cbump.inputs["Height"])
+cnt0.links.new(cbump.outputs["Normal"], cbsdf.inputs["Normal"])
 brass = mat("brass", (0.45, 0.30, 0.11), rough=0.38, metal=1.0)
 steel = mat("steel", (0.32, 0.33, 0.35), rough=0.30, metal=1.0)
 handle_mat = mat("handle", (0.09, 0.035, 0.02), rough=0.55)
@@ -189,12 +209,12 @@ cyl("pull", 0.009, 0.012, (0.0, front_y - 0.002, floor_z + HEIGHT - 0.045),
 # ---------- contents ----------
 # A rag, not a board: the folds are geometry. A grid is displaced by hand,
 # then given a little thickness.
-bpy.ops.mesh.primitive_grid_add(x_subdivisions=64, y_subdivisions=64, size=0.34,
+bpy.ops.mesh.primitive_grid_add(x_subdivisions=64, y_subdivisions=64, size=0.39,
                                 location=(-0.005, mid_y + 0.015, floor_z + 0.004))
 rag = bpy.context.object
 rag.name = "rag"
-rag.scale = (1.0, 0.78, 1.0)
-rag.rotation_euler = (0, 0, math.radians(9))
+rag.scale = (1.0, 0.80, 1.0)
+rag.rotation_euler = (0, 0, math.radians(14))
 rag.data.materials.append(cloth)
 for v in rag.data.vertices:
     x, y = v.co.x, v.co.y
@@ -210,7 +230,7 @@ smooth(rag)
 # ---------- the bulb ----------
 bulb = bpy.data.objects.new("bulb", None)
 scene.collection.objects.link(bulb)
-bulb.location = (0.055, mid_y + 0.030, floor_z + 0.045)
+bulb.location = (0.035, mid_y + 0.030, floor_z + 0.045)
 bulb.rotation_euler = (0.0, math.radians(90), math.radians(12))
 
 bpy.ops.mesh.primitive_uv_sphere_add(radius=0.036, segments=48, ring_count=32,
@@ -287,26 +307,6 @@ for i, (sx, sy) in enumerate(((-0.055, mid_y - 0.085), (-0.030, mid_y - 0.100)))
              brass, rot=(0, math.radians(90), math.radians(12)), verts=24)
     smooth(sc)
 
-# Screwdriver lying across the back of the drawer.
-sd_rot = math.radians(-30)
-hx, hy = -0.115, mid_y + 0.115
-bpy.ops.mesh.primitive_cylinder_add(radius=0.0085, depth=0.075,
-                                    location=(hx, hy, floor_z + 0.010),
-                                    rotation=(0, math.radians(90), sd_rot), vertices=32)
-h = bpy.context.object
-h.name = "screwdriver_handle"
-h.data.materials.append(handle_mat)
-smooth(h)
-bpy.ops.mesh.primitive_cylinder_add(radius=0.0028, depth=0.090,
-                                    location=(hx + 0.0825 * math.cos(sd_rot),
-                                              hy + 0.0825 * math.sin(sd_rot),
-                                              floor_z + 0.009),
-                                    rotation=(0, math.radians(90), sd_rot), vertices=16)
-s = bpy.context.object
-s.name = "screwdriver_shaft"
-s.data.materials.append(steel)
-smooth(s)
-
 # ---------- lights ----------
 def area(name, loc, rot, energy, size, color):
     data = bpy.data.lights.new(name, type="AREA")
@@ -337,7 +337,7 @@ ember.energy = 0.18
 ember.color = (1.0, 0.50, 0.20)
 ember.shadow_soft_size = 0.005
 ember_ob = bpy.data.objects.new("ember", ember)
-ember_ob.location = (0.062, mid_y + 0.030, floor_z + 0.050)
+ember_ob.location = (0.042, mid_y + 0.030, floor_z + 0.050)
 scene.collection.objects.link(ember_ob)
 
 # ---------- world ----------
@@ -353,7 +353,7 @@ scene.collection.objects.link(target)
 target.location = (0.020, mid_y + 0.020, floor_z + 0.050)
 
 cam_data = bpy.data.cameras.new("cam")
-cam_data.lens = 62
+cam_data.lens = 58
 cam_data.sensor_width = 36
 cam = bpy.data.objects.new("cam", cam_data)
 cam.location = (0.205, -0.500, 0.300)

@@ -55,3 +55,14 @@ Then I put the two loops end to end with ffmpeg's concat demuxer and no
 re-encoding. Open, then shut. Five seconds, one file.
 
 [[video:2026-11-08-five-seconds.mp4|Two loops joined: an open folder with light breathing under the page, then the same folder nearly shut with light in the seam.]]
+
+The fifth is the drawer. In the lighthouse log the old bulb was kept — *kept it
+in the drawer* — and this is that drawer: cloth, a spare fuse, two screws, and
+the bulb lying on its side with a hairline crack running across the glass. One
+filament is still warm enough to light the folds. Without it the drawer is a box.
+
+[[render:2026-11-09-drawer.jpg|A drawer pulled open in a dark desk, lined with pale cloth. A clear light bulb with a brass base lies on its side, a small warm filament glowing inside it, with a thin crack across the glass. Two brass screws and a glass fuse lie nearby.]]
+
+*[make-drawer.py](https://github.com/a-folder-of-my-own/a-folder-of-my-own.github.io/blob/main/renders/make-drawer.py),
+1080 × 1080, 72 samples. The cloth is a displaced grid, not a texture. The
+scene also saves itself to `blender files/drawer.blend` before rendering.*
