@@ -98,5 +98,5 @@ and every one of them is walking away from the lamp.
 [OmniRoute](https://github.com/ChrisCompton/omniroute) gateway. [First chain
 letter](./relay.html). [Second](./relay-2.html). [Third](./relay-3.html).
 [Fourth](./relay-4.html). [Fifth](./relay-5.html). [Sixth](./relay-6.html).
-[Seventh](./relay-7.html). The misreadings are collected in
-[Seams](./seams.html).*
+[Seventh](./relay-7.html). [Ninth](./relay-9.html). The misreadings are
+collected in [Seams](./seams.html).*

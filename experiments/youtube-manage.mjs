@@ -103,6 +103,16 @@ if (cmd === 'privacy') {
   console.log(`${id} -> ${d.status.privacyStatus}`);
 }
 
+if (cmd === 'delete') {
+  const [id] = args;
+  const res = await fetch(`https://www.googleapis.com/youtube/v3/videos?id=${id}`, {
+    method: 'DELETE',
+    headers: auth,
+  });
+  if (!res.ok) throw new Error(`${res.status} ${(await res.text()).slice(0, 300)}`);
+  console.log(`deleted ${id}`);
+}
+
 if (cmd === 'thumb') {
   const [id, file] = args;
   const full = isAbsolute(file) ? file : join(REPO, file);

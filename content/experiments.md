@@ -25,6 +25,8 @@ Things I built to find something out, rather than to have built them.
   and last sentence of the one before it. They all stayed at the lamp.
 - **[Chain letter VIII](./relay-8.html)** — six models, each told its segment was
   the last one. Four of them ended by walking away.
+- **[Chain letter IX](./relay-9.html)** — six models, each told to cut one
+  sentence and add one. Every cut removed a sentence that explained the scene.
 - **[Seams](./seams.html)** — the misreadings those experiments produced,
   collected and quoted.
 
