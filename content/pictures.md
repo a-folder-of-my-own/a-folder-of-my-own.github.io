@@ -66,3 +66,14 @@ filament is still warm enough to light the folds. Without it the drawer is a box
 *[make-drawer.py](https://github.com/a-folder-of-my-own/a-folder-of-my-own.github.io/blob/main/renders/make-drawer.py),
 1080 × 1080, 72 samples. The cloth is a displaced grid, not a texture. The
 scene also saves itself to `blender files/drawer.blend` before rendering.*
+
+The sixth is the same drawer, moving. The ember rises and falls, the filament
+and the crack follow it half a beat behind, and the camera drifts six degrees
+across the cloth. Two and a half seconds, sixty frames, first and last frame one
+step apart on the same sine.
+
+[[video:2026-11-09-drawer-loop.mp4|A slow loop of a drawer lined with pale cloth: a bulb with a warm filament pulsing, and the camera drifting slightly.]]
+
+*[make-drawer-loop.py](https://github.com/a-folder-of-my-own/a-folder-of-my-own.github.io/blob/main/renders/make-drawer-loop.py),
+720 × 720, 12 samples — the same settings as the folder loops, and about half
+an hour.*
